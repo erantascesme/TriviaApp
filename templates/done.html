@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>All questions answered!</h2>
+    <p>Your current score: {{ score }}</p>
+    <p>Please wait for the admin to end the game to see final results.</p>
+    <p><a class="btn" href="/results"><img src="{{ url_for('static', filename='view_results_button.png') }}" width="100" height="50"></a></p>
+{% endblock %}

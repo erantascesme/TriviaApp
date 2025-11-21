@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Add a Question</h2>
+    <form action= "/add_question" method="post" class="stack">
+      <label>Question
+        <input type="text" name="question" maxlength="320" required>
+      </label>
+      <label>Answer 1 (Correct)
+        <input type="text" name="answer1" maxlength="320" required>
+      </label>
+      <label>Answer 2 (Wrong)
+        <input type="text" name="answer2" maxlength="320" required>
+      </label>
+      <label>Answer 3 (Wrong)
+        <input type="text" name="answer3" maxlength="320" required>
+      </label>
+      <input type="image" src="{{ url_for('static', filename='add_question_button.png') }}" width="100" height="50">
+    </form>
+{% endblock %}

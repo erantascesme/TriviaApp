@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if error_msg %} {{error_msg}} {% endif %}
+<h2>Choose the correct answer</h2>
+<form action="/play" method="post">
+  <input type="hidden" name="q_id" value="{{ q_id }}">
+  <table class="table">
+      <tr>
+        <th colspan="2" class="q">{{ q.question }}</th>
+      </tr>
+      {% for a in answers %}
+      <tr class="option">
+        <td><input type="radio" name="choice" value="{{ a }}" required></td>
+        <td>{{ a }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="2">
+          <input type="image" src="{{ url_for('static', filename='answer_button.png') }}" width="100" height="50">
+        </td>
+      </tr>
+  </table>
+</form>
+{% endblock %}

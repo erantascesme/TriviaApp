@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Welcome! Enter your name</h2>
+    <form action= "/" method="post">
+      <label>Name
+        <input type="text" name="user_name" required>
+      </label>
+      <input type="image" src="{{ url_for('static', filename='start_button.png') }}" width="100" height="50">
+    </form>
+{% endblock %}
