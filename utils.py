@@ -28,7 +28,7 @@ def get_phase():
 
 def get_answered(user_name):
     with db_cur() as cursor:
-        cursor.execute("SELECT id FROM user_question_answers WHERE user_name = %s",(user_name,))
+        cursor.execute("SELECT id FROM User_question_answers WHERE user_name = %s",(user_name,))
         rows = cursor.fetchall()
 
     answered_ids = [int(row[0]) for row in rows]
@@ -37,7 +37,7 @@ def get_answered(user_name):
 
 def add_answered(user_name, question_id):
     with db_cur() as cursor:
-        cursor.execute("INSERT INTO user_question_answers (user_name, id) VALUES (%s, %s)",(user_name, question_id))
+        cursor.execute("INSERT INTO User_question_answers (user_name, id) VALUES (%s, %s)",(user_name, question_id))
 
 
 def set_phase(phase):
