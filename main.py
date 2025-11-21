@@ -18,6 +18,10 @@ app.config.update(
 Session(app)
 
 
+@app.errorhandler(404)
+def invalid_route(e):
+    return redirect("/")
+
 @app.route("/", methods=["POST", "GET"])
 def home_page():
     user_name = session.get("user_name")
